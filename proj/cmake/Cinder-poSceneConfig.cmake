@@ -7,7 +7,8 @@ if(NOT TARGET Cinder-poScene)
 
     # Make a list of source files and define that to be ${SOURCE_LIST}.
     file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
-            "${Cinder-poScene_PROJECT_ROOT}/src/poScene/*.cpp")
+            "${Cinder-poScene_PROJECT_ROOT}/src/poScene/*.cpp"
+            "${Cinder-poScene_PROJECT_ROOT}/src/poScene/ui/*.cpp")
 
     # Create the library!
     add_library(Cinder-poScene ${SOURCE_LIST})
@@ -17,6 +18,7 @@ if(NOT TARGET Cinder-poScene)
     # So you need to set `../../src/` to include.
     target_include_directories(Cinder-poScene PRIVATE "${Cinder-poScene_PROJECT_ROOT}/src/poScene" )
     target_include_directories(Cinder-poScene PUBLIC "${CINDER_poScene_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-poScene SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
