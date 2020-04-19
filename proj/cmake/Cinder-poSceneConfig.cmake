@@ -17,7 +17,7 @@ if(NOT TARGET Cinder-poScene)
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
     target_include_directories(Cinder-poScene PRIVATE "${Cinder-poScene_PROJECT_ROOT}/src/poScene" )
-    target_include_directories(Cinder-poScene PUBLIC "${CINDER_poScene_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-poScene PUBLIC "${CINDER-poScene_PROJECT_ROOT}/src" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
