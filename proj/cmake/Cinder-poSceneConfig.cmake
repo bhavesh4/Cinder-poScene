@@ -16,14 +16,14 @@ if(NOT TARGET Cinder-poScene)
     # Add include directories.
     # Notice that `cinderblock.xml` has `<includePath>src</includePath>`.
     # So you need to set `../../src/` to include.
-    target_include_directories(Cinder-poScene PRIVATE "${Cinder-poScene_PROJECT_ROOT}/src/poScene" )
-    target_include_directories(Cinder-poScene PUBLIC "${CINDER-poScene_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-poScene PUBLIC "${Cinder-poScene_PROJECT_ROOT}/src" )
+    target_include_directories(Cinder-poScene SYSTEM BEFORE PUBLIC "${CINDER_PATH}/include" )
 
 
     # If your Cinder block has no source code but instead pre-build libraries,
     # you can specify all of them here (uncomment the below line and adjust to your needs).
     # Make sure to use the libraries for the right platform.
-    # # target_link_libraries(Cinder-Notifications "${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a")
+    # # target_link_libraries(Cinder-poScene ${Cinder-OpenCV_PROJECT_ROOT}/lib/libopencv_core.a)
 
     if(NOT TARGET cinder)
         include("${CINDER_PATH}/proj/cmake/configure.cmake")
